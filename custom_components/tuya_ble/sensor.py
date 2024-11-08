@@ -166,7 +166,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         ),
                     ),
                     TuyaBLESensorMapping(
-                        dp_id=3,
+                        dp_id=31,
                         description=SensorEntityDescription(
                             key="battery_state",
                             icon="mdi:battery",
