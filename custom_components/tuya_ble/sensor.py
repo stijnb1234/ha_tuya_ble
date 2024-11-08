@@ -179,12 +179,12 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                               "poweroff"
                             ],
                         ),
-                        # icons=[
-                        #     "mdi:battery-alert",
-                        #     "mdi:battery-50",
-                        #     "mdi:battery-check",
-                        #     "mdi:battery-unknown",
-                        # ],
+                        icons=[
+                            "mdi:battery-alert",
+                            "mdi:battery-50",
+                            "mdi:battery-check",
+                            "mdi:battery-unknown",
+                        ],
                     ),
                 ],
             ),
