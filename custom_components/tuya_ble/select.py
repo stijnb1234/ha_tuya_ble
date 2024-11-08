@@ -122,19 +122,6 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
                             entity_category=EntityCategory.CONFIG,
                         ),
                     ),
-                    TuyaBLESelectMapping(
-                        dp_id=31,
-                        description=SelectEntityDescription(
-                            key="battery_state",
-                            options=[
-                              "high",
-                              "medium",
-                              "low",
-                              "poweroff",
-                            ],
-                            entity_category=EntityCategory.CONFIG,
-                        ),
-                    ),
                 ]
             ),
         }

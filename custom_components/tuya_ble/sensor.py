@@ -157,16 +157,16 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         description=SensorEntityDescription(
                             key="alarm_lock",
                             device_class=SensorDeviceClass.ENUM,
-                            # options=[
-                            #   "wrong_finger",
-                            #   "wrong_password",
-                            #   "wrong_card",
-                            #   "low_battery"
-                            # ],
+                            options=[
+                              "wrong_finger",
+                              "wrong_password",
+                              "wrong_card",
+                              "low_battery"
+                            ],
                         ),
                     ),
                     TuyaBLESensorMapping(
-                        dp_id=31,
+                        dp_id=8,
                         description=SensorEntityDescription(
                             key="battery_state",
                             icon="mdi:battery",
