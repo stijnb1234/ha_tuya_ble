@@ -79,7 +79,13 @@
         },
         "select": {
             "beep_volume": {
-                "name": "Lock Volume"
+              "name": "Lock Volume",
+              "state": {
+                "mute": "Mute",
+                "low": "Low",
+                "normal": "Normal",
+                "high": "High"
+              }
             },
             "fingerbot_mode": {
                 "name": "Mode",

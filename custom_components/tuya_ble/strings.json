@@ -92,7 +92,12 @@
         }
       },
       "beep_volume": {
-          "name": "Lock Volume"
+        "name": "Lock Volume",
+        "state": {
+          "program": "Program",
+          "push": "Push",
+          "switch": "Switch"
+        }
       }
     },
     "binary_sensor": {
