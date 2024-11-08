@@ -157,12 +157,12 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         description=SensorEntityDescription(
                             key="alarm_lock",
                             device_class=SensorDeviceClass.ENUM,
-                            options=[
-                              "wrong_finger",
-                              "wrong_password",
-                              "wrong_card",
-                              "low_battery"
-                            ],
+                            # options=[
+                            #   "wrong_finger",
+                            #   "wrong_password",
+                            #   "wrong_card",
+                            #   "low_battery"
+                            # ],
                         ),
                     ),
                     TuyaBLESensorMapping(
@@ -171,19 +171,20 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             key="battery_state",
                             icon="mdi:battery",
                             device_class=SensorDeviceClass.ENUM,
-                            entity_category=EntityCategory.DIAGNOSTIC,
-                            options=[
-                                BATTERY_STATE_LOW,
-                                BATTERY_STATE_NORMAL,
-                                BATTERY_STATE_HIGH,
-                                BATTERY_STATE_POWEROFF
-                            ],
+                            # entity_category=EntityCategory.DIAGNOSTIC,
+                            # options=[
+                            #     BATTERY_STATE_LOW,
+                            #     BATTERY_STATE_NORMAL,
+                            #     BATTERY_STATE_HIGH,
+                            #     BATTERY_STATE_POWEROFF
+                            # ],
                         ),
-                        icons=[
-                            "mdi:battery-alert",
-                            "mdi:battery-50",
-                            "mdi:battery-check",
-                        ],
+                        # icons=[
+                        #     "mdi:battery-alert",
+                        #     "mdi:battery-50",
+                        #     "mdi:battery-check",
+                        #     "mdi:battery-unknown",
+                        # ],
                     ),
                 ],
             ),
