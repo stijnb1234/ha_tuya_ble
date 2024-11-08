@@ -488,4 +488,33 @@ async def async_setup_entry(
                     mapping,
                 )
             )
+    entities.append(
+        TuyaBLESensor(
+            hass,
+            data.coordinator,
+            data.device,
+            data.product,
+            TuyaBLESensorMapping(
+              dp_id=21,
+              description=SensorEntityDescription(
+                key="alarm_lock",
+                device_class=SensorDeviceClass.ENUM,
+                options=[
+                    "wrong_finger",
+                    "wrong_password",
+                    "low_battery",
+                ],
+              ),
+            )
+        )
+    )
+    entities.append(
+        TuyaBLESensor(
+            hass,
+            data.coordinator,
+            data.device,
+            data.product,
+            TuyaBLEBatteryMapping(dp_id=8)
+        )
+    )
     async_add_entities(entities)
