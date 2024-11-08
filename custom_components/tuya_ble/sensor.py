@@ -27,6 +27,7 @@ from .const import (
     BATTERY_STATE_HIGH,
     BATTERY_STATE_LOW,
     BATTERY_STATE_NORMAL,
+    BATTERY_STATE_POWEROFF,
     BATTERY_CHARGED,
     BATTERY_CHARGING,
     BATTERY_NOT_CHARGING,
@@ -164,7 +165,6 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             ],
                         ),
                     ),
-                    TuyaBLEBatteryMapping(dp_id=8),
                     TuyaBLESensorMapping(
                         dp_id=3,
                         description=SensorEntityDescription(
@@ -176,6 +176,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                                 BATTERY_STATE_LOW,
                                 BATTERY_STATE_NORMAL,
                                 BATTERY_STATE_HIGH,
+                                BATTERY_STATE_POWEROFF
                             ],
                         ),
                         icons=[

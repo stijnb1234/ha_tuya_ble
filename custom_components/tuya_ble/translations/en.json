@@ -118,9 +118,10 @@
             "battery_state": {
                 "name": "Battery state",
                 "state": {
-                    "high": "High",
-                    "low": "Low",
-                    "normal": "Normal"
+                  "high": "High",
+                  "low": "Low",
+                  "normal": "Normal",
+                  "poweroff": "Power Off"
                 }
             },
             "carbon_dioxide": {
