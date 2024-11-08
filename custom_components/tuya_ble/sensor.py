@@ -172,12 +172,12 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             icon="mdi:battery",
                             device_class=SensorDeviceClass.ENUM,
                             # entity_category=EntityCategory.DIAGNOSTIC,
-                            # options=[
-                            #     BATTERY_STATE_LOW,
-                            #     BATTERY_STATE_NORMAL,
-                            #     BATTERY_STATE_HIGH,
-                            #     BATTERY_STATE_POWEROFF
-                            # ],
+                            options=[
+                              "high",
+                              "medium",
+                              "low",
+                              "poweroff"
+                            ],
                         ),
                         # icons=[
                         #     "mdi:battery-alert",
