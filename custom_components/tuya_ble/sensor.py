@@ -163,7 +163,25 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             ],
                         ),
                     ),
-                    TuyaBLEBatteryMapping(dp_id=8),
+                    TuyaBLESensorMapping(
+                        dp_id=3,
+                        description=SensorEntityDescription(
+                            key="battery_state",
+                            icon="mdi:battery",
+                            device_class=SensorDeviceClass.ENUM,
+                            entity_category=EntityCategory.DIAGNOSTIC,
+                            options=[
+                                BATTERY_STATE_LOW,
+                                BATTERY_STATE_NORMAL,
+                                BATTERY_STATE_HIGH,
+                            ],
+                        ),
+                        icons=[
+                            "mdi:battery-alert",
+                            "mdi:battery-50",
+                            "mdi:battery-check",
+                        ],
+                    ),
                 ],
             ),
         }
