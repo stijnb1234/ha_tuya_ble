@@ -33,22 +33,6 @@ TuyaBLEBinarySensorIsAvailable = (
 )
 
 
-# def get_door_lock_status(self: TuyaBLEBinarySensor, product: TuyaBLEProductInfo) -> bool:
-#     datapoint = self._device.datapoints[self._mapping.dp_id]
-#     if datapoint:
-#         if (
-#             datapoint.type
-#             in [TuyaBLEDataPointType.DT_RAW, TuyaBLEDataPointType.DT_BITMAP]
-#             and self._mapping.bitmap_mask
-#         ):
-#             bitmap_value = bytes(datapoint.value)
-#             bitmap_mask = self._mapping.bitmap_mask
-#             for v, m in zip(bitmap_value, bitmap_mask, strict=True):
-#                 if (v & m) != 0:
-#                     return True
-#         else:
-#             return bool(datapoint.value)
-#     return False
 @dataclass
 class TuyaBLEBinarySensorMapping:
     dp_id: int
@@ -79,23 +63,6 @@ mapping: dict[str, TuyaBLECategoryBinarySensorMapping] = {
                         device_class=BinarySensorDeviceClass.BATTERY,
                         entity_category=EntityCategory.DIAGNOSTIC,
                     ),
-                ),
-            ],
-        },
-    ),
-    "jtmspro": TuyaBLECategoryBinarySensorMapping(
-        products={
-            "zl8r5v0x": [  # Smart Lock Motor Status
-                TuyaBLEBinarySensorMapping(
-                    dp_id=47,
-                    description=BinarySensorEntityDescription(
-                        key="lock_motor_state",
-                        #icon="mdi:battery-alert",
-                        device_class=BinarySensorDeviceClass.DOOR,
-                        # entity_category=EntityCategory.DIAGNOSTIC,
-                    ),
-                    # getter=get_door_lock_status
-
                 ),
             ],
         },

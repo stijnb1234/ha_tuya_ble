@@ -81,6 +81,23 @@ def battery_enum_getter(self: TuyaBLESensor) -> None:
     datapoint = self._device.datapoints[104]
     if datapoint:
         self._attr_native_value = datapoint.value * 20.0
+
+def get_door_lock_status(self: TuyaBLESensor) -> bool:
+    datapoint = self._device.datapoints[self._mapping.dp_id]
+    if datapoint:
+        if (
+            datapoint.type
+            in [TuyaBLEDataPointType.DT_RAW, TuyaBLEDataPointType.DT_BITMAP]
+            and self._mapping.bitmap_mask
+        ):
+            bitmap_value = bytes(datapoint.value)
+            bitmap_mask = self._mapping.bitmap_mask
+            for v, m in zip(bitmap_value, bitmap_mask, strict=True):
+                if (v & m) != 0:
+                    return True
+        else:
+            return bool(datapoint.value)
+    return False
 @dataclass
 class TuyaBLECategorySensorMapping:
     products: dict[str, list[TuyaBLESensorMapping]] | None = None
@@ -186,6 +203,20 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             "mdi:battery-unknown",
                         ],
                     ),
+                    # TuyaBLESensorMapping(
+                    #     dp_id=47,
+                    #     description=SensorEntityDescription(
+                    #         key="lock_motor_state",
+                    #         #icon="mdi:battery-alert",
+                    #         device_class=SensorDeviceClass.ENUM,
+                    #         # entity_category=EntityCategory.DIAGNOSTIC,
+                    #         options=[
+                    #           "true",
+                    #           "false",
+                    #         ],
+                    #     ),
+                    #     # getter=get_door_lock_status
+                    # ),
                 ],
             ),
         }
