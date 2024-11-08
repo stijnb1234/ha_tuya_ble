@@ -390,7 +390,7 @@ def get_device_info(device: TuyaBLEDevice) -> DeviceInfo | None:
             product_name,
             get_short_address(device.address),
         ),
-        sw_version=("%s (protocol %s)")
+        sw_version=("%s (protocol %s)" + " (product_id id:%s " +device.product_id+")" + " (category:%s " +device.category+")")
         % (
             device.device_version,
             device.protocol_version,

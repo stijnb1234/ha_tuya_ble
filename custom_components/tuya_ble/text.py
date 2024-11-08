@@ -229,18 +229,4 @@ async def async_setup_entry(
                     mapping,
                 )
             )
-    
-    entities.append(
-        TuyaBLEText(
-            hass,
-            data.coordinator,
-            data.device,
-            data.product,
-            TuyaBLETextMapping(
-                dp_id=121,
-                is_available=True,
-                default_value=data.device.product_id + " ::: " + data.device.category,
-              ),
-        )
-    )
     async_add_entities(entities)
