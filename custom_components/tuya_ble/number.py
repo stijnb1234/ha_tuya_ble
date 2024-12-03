@@ -412,6 +412,23 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
             ],
         },
     ),
+    "jtmspro": TuyaBLECategoryNumberMapping(
+        products={
+            "zl8r5v0x": # Smart Lock
+            [
+                TuyaBLENumberMapping(
+                    dp_id=36,
+                    description=NumberEntityDescription(
+                        key="auto_lock_timing",
+                        native_max_value=9999,
+                        native_min_value=0,
+                        native_step=1,
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+            ]
+        }
+    ),
     "ggq": TuyaBLECategoryNumberMapping(
         products={
             "6pahkcau": [  # Irrigation computer

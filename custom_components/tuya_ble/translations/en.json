@@ -178,60 +178,66 @@
             }
         },
         "switch": {
-            "antifreeze": {
-                "name": "Antifreeze"
-            },
-            "carbon_dioxide_alarm_switch": {
-                "name": "Alarm enabled"
-            },
-            "carbon_dioxide_severely_exceed_alarm": {
-                "name": "Severely exceed alarm"
-            },
-            "child_lock": {
-                "name": "Child Lock"
-            },
-            "lock_motor_state": {
-                "name": "Motor State"
-            },
-            "low_battery_alarm": {
-                "name": "Low battery alarm"
-            },
-            "manual_control": {
-                "name": "Manual control"
-            },
-            "program": {
-                "name": "Program"
-            },
-            "program_repeat_forever": {
-                "name": "Repeat forever"
-            },
-            "programming_mode": {
-                "name": "Programming Mode"
-            },
-            "programming_switch": {
-                "name": "Programming Switch"
-            },
-            "reverse_positions": {
-                "name": "Reverse positions"
-            },
-            "switch": {
-                "name": "Switch"
-            },
-            "water_scale_proof": {
-                "name": "Anti-scale"
-            },
-            "water_valve": {
-                "name": "Irrigation valve"
-            },
-            "water_valve_z1": {
-                "name": "Irrigation valve - Zone 1"
-            },
-            "water_valve_z2": {
-                "name": "Irrigation valve - Zone 2"
-            },
-            "window_check": {
-                "name": "Window Check"
-            }
+          "antifreeze": {
+            "name": "Antifreeze"
+          },
+          "carbon_dioxide_alarm_switch": {
+            "name": "Alarm enabled"
+          },
+          "carbon_dioxide_severely_exceed_alarm": {
+            "name": "Severely exceed alarm"
+          },
+          "child_lock": {
+            "name": "Child Lock"
+          },
+          "lock_motor_state": {
+            "name": "Motor State"
+          },
+          "auto_lock": {
+            "name": "Auto Lock"
+          },
+          "auto_lock_timing": {
+            "name": "Auto Lock Timing"
+          },
+          "low_battery_alarm": {
+            "name": "Low battery alarm"
+          },
+          "manual_control": {
+            "name": "Manual control"
+          },
+          "program": {
+            "name": "Program"
+          },
+          "program_repeat_forever": {
+            "name": "Repeat forever"
+          },
+          "programming_mode": {
+            "name": "Programming Mode"
+          },
+          "programming_switch": {
+            "name": "Programming Switch"
+          },
+          "reverse_positions": {
+            "name": "Reverse positions"
+          },
+          "switch": {
+            "name": "Switch"
+          },
+          "water_scale_proof": {
+            "name": "Anti-scale"
+          },
+          "water_valve": {
+            "name": "Irrigation valve"
+          },
+          "water_valve_z1": {
+            "name": "Irrigation valve - Zone 1"
+          },
+          "water_valve_z2": {
+            "name": "Irrigation valve - Zone 2"
+          },
+          "window_check": {
+            "name": "Window Check"
+          }
         },
         "text": {
             "program": {
