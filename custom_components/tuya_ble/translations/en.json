@@ -35,9 +35,15 @@
             }
         },
         "button": {
-            "push": {
-                "name": "Push"
-            }
+          "push": {
+            "name": "Push"
+          },
+          "door_lock": {
+            "name": "Lock"
+          },
+          "door_unlock": {
+            "name": "Unlock"
+          }
         },
         "number": {
             "brightness": {
