@@ -19,6 +19,7 @@ from homeassistant.const import (
     TIME_SECONDS,
     VOLUME_MILLILITERS,
     UnitOfTemperature,
+    UnitOfTime
 )
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity import EntityCategory
@@ -420,10 +421,11 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
                     dp_id=36,
                     description=NumberEntityDescription(
                         key="auto_lock_timing",
+                        icon="mdi:timer",
                         native_max_value=9999,
                         native_min_value=0,
                         native_step=1,
-                        entity_category=EntityCategory.CONFIG,
+                        native_unit_of_measurement=UnitOfTime.SECONDS,
                     ),
                 ),
             ]
