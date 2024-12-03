@@ -154,13 +154,13 @@
           "name": "Battery"
       },
       "alarm_lock": {
-          "name": "Alarm"
-      },
-      "wrong_finger": {
-          "name": "Wrong Fingerprint"
-      },
-      "wrong_password": {
-          "name": "Wrong Password"
+        "name": "Alarm",
+        "state": {
+          "wrong_finger": "Wrong Fingerprint",
+          "wrong_password": "Wrong Password",
+          "wrong_card": "Wrong Card",
+          "low_battery": "Low Battery"
+        }
       },
       "low_battery": {
           "name": "Low Battery"
