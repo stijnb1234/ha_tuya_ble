@@ -195,7 +195,7 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
         },
     ),
-    "": TuyaBLECategoryInfo(
+    "jtmspro": TuyaBLECategoryInfo(
         products={
             **dict.fromkeys(
                 [
