@@ -195,18 +195,18 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
         },
     ),
-    "jtmspro": TuyaBLECategoryInfo(
-        products={
-            **dict.fromkeys(
-                [
-                    "zl8r5v0x"
-                ],
-                    TuyaBLEProductInfo(  # device product_id
-                    name="Smart Lock",
-                ),
-            ),
-        },
-    ),
+    # "jtmspro": TuyaBLECategoryInfo(
+    #     products={
+    #         **dict.fromkeys(
+    #             [
+    #                 "zl8r5v0x"
+    #             ],
+    #                 TuyaBLEProductInfo(  # device product_id
+    #                 name="Smart Lock",
+    #             ),
+    #         ),
+    #     },
+    # ),
     "szjqr": TuyaBLECategoryInfo(
         products={
             "3yqdo5yt": TuyaBLEProductInfo(  # device product_id
