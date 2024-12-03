@@ -192,7 +192,6 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                         description=SwitchEntityDescription(
                             key="lock_motor_state",
                         ),
-                        is_available=false
                     ),
                 ]
             ),
