@@ -35,15 +35,14 @@
             }
         },
         "button": {
-          "push": {
-            "name": "Push"
-          },
-          "door_lock": {
-            "name": "Lock"
-          },
-          "door_unlock": {
-            "name": "Unlock"
-          }
+            "push": {
+                "name": "Push"
+            },
+            "door_lock": {
+                "name": "Lock"
+            },
+            "door_unlock": {
+                "name": "Unlock"
         },
         "number": {
             "brightness": {
@@ -81,6 +80,9 @@
             },
             "up_position": {
                 "name": "Up position"
+            },
+            "auto_lock_timing": {
+              "name": "Auto Lock Timing"
             }
         },
         "select": {
@@ -201,9 +203,6 @@
           },
           "auto_lock": {
             "name": "Auto Lock"
-          },
-          "auto_lock_timing": {
-            "name": "Auto Lock Timing"
           },
           "low_battery_alarm": {
             "name": "Low battery alarm"
