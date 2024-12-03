@@ -42,7 +42,8 @@
                 "name": "Lock"
             },
             "door_unlock": {
-                "name": "Unlock"
+              "name": "Unlock"
+            }
         },
         "number": {
             "brightness": {
