@@ -82,11 +82,16 @@ def battery_enum_getter(self: TuyaBLESensor) -> None:
     if datapoint:
         self._attr_native_value = datapoint.value * 20.0
 
-def get_door_lock_status(self: TuyaBLESensor) -> bool:
+def get_door_lock_status(self: TuyaBLESensor) -> str:
     datapoint = self._device.datapoints[self._mapping.dp_id]
-    if datapoint:
-        self._attr_native_value = datapoint.value
-    return False
+    if datapoint and datapoint.value is not None :
+      if datapoint.value == True:
+        self._attr_native_value = "unlocked"
+      else:
+        self._attr_native_value = "locked"
+    else:
+      self._attr_native_value = "unknown"
+
 @dataclass
 class TuyaBLECategorySensorMapping:
     products: dict[str, list[TuyaBLESensorMapping]] | None = None
@@ -197,12 +202,12 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         description=SensorEntityDescription(
                             key="lock_motor_state",
                             icon="mdi:door",
-                            device_class=SensorDeviceClass.ENUM,
+                            # device_class=SensorDeviceClass.ENUM,
                             # entity_category=EntityCategory.DIAGNOSTIC,
-                            options=[
-                              "locked",
-                              "unlocked",
-                            ],
+                            # options=[
+                            #   "locked",
+                            #   "unlocked",
+                            # ],
                         ),
                         getter=get_door_lock_status
                     ),
