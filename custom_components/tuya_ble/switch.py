@@ -187,12 +187,12 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                         ),
                     ),
                     
-                    TuyaBLESwitchMapping(
-                        dp_id=47,
-                        description=SwitchEntityDescription(
-                            key="lock_motor_state",
-                        ),
-                    ),
+                    # TuyaBLESwitchMapping(
+                    #     dp_id=47,
+                    #     description=SwitchEntityDescription(
+                    #         key="lock_motor_state",
+                    #     ),
+                    # ),
                 ]
             ),
         }

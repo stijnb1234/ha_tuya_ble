@@ -196,13 +196,13 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         dp_id=47,
                         description=SensorEntityDescription(
                             key="lock_motor_state",
-                            #icon="mdi:battery-alert",
-                            # device_class=SensorDeviceClass.ENUM,
+                            icon="mdi:door",
+                            device_class=SensorDeviceClass.ENUM,
                             # entity_category=EntityCategory.DIAGNOSTIC,
-                            # options=[
-                            #   "true",
-                            #   "false",
-                            # ],
+                            options=[
+                              "locked",
+                              "unlocked",
+                            ],
                         ),
                         getter=get_door_lock_status
                     ),

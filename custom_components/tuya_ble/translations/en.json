@@ -116,81 +116,88 @@
             }
         },
         "sensor": {
-            "alarm_lock": {
-              "name": "Alarm",
-              "state": {
-                "wrong_finger": "Wrong Fingerprint",
-                "wrong_password": "Wrong Password",
-                "wrong_card": "Wrong Card",
-                "low_battery": "Low Battery"
-              }
-            },
-            "battery": {
-                "name": "Battery"
-            },
-            "battery_charging": {
-                "name": "Battery charging",
-                "state": {
-                    "charged": "Charged",
-                    "charging": "Charging",
-                    "not_charging": "Not charging"
-                }
-            },
-            "battery_state": {
-                "name": "Battery state",
-                "state": {
-                  "high": "High",
-                  "low": "Low",
-                  "normal": "Normal",
-                  "poweroff": "Power Off"
-                }
-            },
-            "carbon_dioxide": {
-                "name": "Carbon dioxide"
-            },
-            "carbon_dioxide_alarm": {
-                "name": "Carbon dioxide level",
-                "state": {
-                    "alarm": "Alarm",
-                    "normal": "Normal"
-                }
-            },
-            "humidity": {
-                "name": "Humidity"
-            },
-            "low_battery": {
-                "name": "Low Battery"
-            },
-            "moisture": {
-                "name": "Moisture"
-            },
-            "residual_electricity": {
-                "name": "Battery"
-            },
-            "signal_strength": {
-                "name": "Signal strength"
-            },
-            "temperature": {
-                "name": "Temperature"
-            },
-            "time_left": {
-                "name": "Remaining irrigation time"
-            },
-            "use_time_z1": {
-                "name": "Last irrigation time - Zone 1"
-            },
-            "use_time_z2": {
-                "name": "Last irrigation time - Zone 2"
-            },
-            "water_intake": {
-                "name": "Water intake"
-            },
-            "wrong_finger": {
-                "name": "Wrong Fingerprint"
-            },
-            "wrong_password": {
-                "name": "Wrong Password"
+          "alarm_lock": {
+            "name": "Alarm",
+            "state": {
+              "wrong_finger": "Wrong Fingerprint",
+              "wrong_password": "Wrong Password",
+              "wrong_card": "Wrong Card",
+              "low_battery": "Low Battery"
             }
+          },
+          "battery": {
+            "name": "Battery"
+          },
+          "battery_charging": {
+            "name": "Battery charging",
+            "state": {
+              "charged": "Charged",
+              "charging": "Charging",
+              "not_charging": "Not charging"
+            }
+          },
+          "battery_state": {
+            "name": "Battery state",
+            "state": {
+              "high": "High",
+              "low": "Low",
+              "normal": "Normal",
+              "poweroff": "Power Off"
+            }
+          },
+          "carbon_dioxide": {
+            "name": "Carbon dioxide"
+          },
+          "carbon_dioxide_alarm": {
+            "name": "Carbon dioxide level",
+            "state": {
+              "alarm": "Alarm",
+              "normal": "Normal"
+            }
+          },
+          "humidity": {
+            "name": "Humidity"
+          },
+          "low_battery": {
+            "name": "Low Battery"
+          },
+          "moisture": {
+            "name": "Moisture"
+          },
+          "residual_electricity": {
+            "name": "Battery"
+          },
+          "signal_strength": {
+            "name": "Signal strength"
+          },
+          "temperature": {
+            "name": "Temperature"
+          },
+          "time_left": {
+            "name": "Remaining irrigation time"
+          },
+          "use_time_z1": {
+            "name": "Last irrigation time - Zone 1"
+          },
+          "use_time_z2": {
+            "name": "Last irrigation time - Zone 2"
+          },
+          "water_intake": {
+            "name": "Water intake"
+          },
+          "wrong_finger": {
+            "name": "Wrong Fingerprint"
+          },
+          "wrong_password": {
+            "name": "Wrong Password"
+          },
+          "lock_motor_state": {
+            "name": "Motor State",
+            "state": {
+              "locked": "Locked",
+              "unlocked": "Unlocked"
+            }
+          }
         },
         "switch": {
           "antifreeze": {
