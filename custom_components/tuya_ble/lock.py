@@ -38,7 +38,8 @@ class TuyaBLELockMapping:
     """Tuya BLE lock mapping."""
 
     description: LockEntityDescription
-    dp_id: int
+    dp_unlock_ble: int     # For unlock state
+    dp_bluetooth_unlock: int  # For unlock command
     getter: TuyaBLELockGetter = None
     setter: TuyaBLELockSetter = None
     is_available: TuyaBLELockIsAvailable = None
@@ -54,7 +55,8 @@ LOCK_TYPES: dict[str, TuyaBLECategoryLockMapping] = {
         products={
             "gumrixyt": [  # Drawer lock
                 TuyaBLELockMapping(
-                    dp_id=33,
+                    dp_unlock_ble=19,      # unlock state (value)
+                    dp_bluetooth_unlock=6,  # unlock command (raw)
                     description=LockEntityDescription(
                         key="lock",
                         name="Lock",
@@ -128,9 +130,10 @@ class TuyaBLELock(TuyaBLEEntity, LockEntity):
         if self._mapping.getter:
             return self._mapping.getter(self, self._product)
 
-        datapoint = self._device.datapoints[self._mapping.dp_id]
+        # unlock_ble is 1 when unlocked, 0 when locked
+        datapoint = self._device.datapoints[self._mapping.dp_unlock_ble]
         if datapoint:
-            return bool(datapoint.value)
+            return not bool(datapoint.value)
         return None
 
     async def async_lock(self, **kwargs: Any) -> None:
@@ -139,13 +142,14 @@ class TuyaBLELock(TuyaBLEEntity, LockEntity):
             self._mapping.setter(self, self._product, True)
             return
 
-        datapoint = self._device.datapoints.get_or_create(
-            self._mapping.dp_id,
-            TuyaBLEDataPointType.DT_BOOL,
-            False,
+        # Send lock command
+        unlock_dp = self._device.datapoints.get_or_create(
+            self._mapping.dp_bluetooth_unlock,
+            TuyaBLEDataPointType.DT_RAW,
+            bytes([0, 0]),  # Lock command
         )
-        if datapoint:
-            await datapoint.set_value(True)
+        if unlock_dp:
+            await unlock_dp.set_value(bytes([0, 0]))  # Lock command
 
     async def async_unlock(self, **kwargs: Any) -> None:
         """Unlock the lock."""
@@ -153,10 +157,11 @@ class TuyaBLELock(TuyaBLEEntity, LockEntity):
             self._mapping.setter(self, self._product, False)
             return
 
-        datapoint = self._device.datapoints.get_or_create(
-            self._mapping.dp_id,
-            TuyaBLEDataPointType.DT_BOOL,
-            False,
+        # Send unlock command
+        unlock_dp = self._device.datapoints.get_or_create(
+            self._mapping.dp_bluetooth_unlock,
+            TuyaBLEDataPointType.DT_RAW,
+            bytes([0, 1]),  # Unlock command
         )
-        if datapoint:
-            await datapoint.set_value(False)
+        if unlock_dp:
+            await unlock_dp.set_value(bytes([0, 1]))  # Unlock command

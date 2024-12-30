@@ -178,8 +178,9 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                 TuyaBLESwitchMapping(
                     dp_id=33,
                     description=SwitchEntityDescription(
-                        key="lock",
-                        icon="mdi:lock",
+                        key="automatic_lock",
+                        name="Auto Lock",
+                        icon="mdi:lock-clock",
                     ),
                 ),
             ],

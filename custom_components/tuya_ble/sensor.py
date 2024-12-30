@@ -164,34 +164,12 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         device_class=SensorDeviceClass.ENUM,
                         options=[
                             "wrong_finger",
-                            "wrong_password", 
+                            "wrong_password",
                             "low_battery",
-                            "wrong_card",
                         ],
                     ),
                 ),
-                TuyaBLESensorMapping(
-                    dp_id=9,
-                    description=SensorEntityDescription(
-                        key="battery_state",
-                        icon="mdi:battery",
-                        device_class=SensorDeviceClass.ENUM,
-                        entity_category=EntityCategory.DIAGNOSTIC,
-                        options=[
-                            BATTERY_STATE_LOW,
-                            BATTERY_STATE_NORMAL,
-                            BATTERY_STATE_HIGH,
-                            BATTERY_STATE_POWEROFF,
-                        ],
-                    ),
-                    icons=[
-                        "mdi:battery-alert",
-                        "mdi:battery-50",
-                        "mdi:battery-check",
-                        "mdi:battery-unknown",
-                    ],
-                ),
-                TuyaBLEBatteryMapping(dp_id=8),
+                TuyaBLEBatteryMapping(dp_id=8),  # residual_electricity
             ],
         }
     ),
@@ -310,7 +288,6 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
             "ojzlzzsw": [  # Soil moisture sensor
                 TuyaBLETemperatureMapping(
                     dp_id=1,
-                    coefficient=10.0,
                 ),
                 TuyaBLESensorMapping(
                     dp_id=2,
